@@ -1,0 +1,38 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Lato:400,700&amp;subset=latin-ext');
+
+/*Mixins*/
+@import "mixins/mixins";
+
+/*Config*/
+@import "config/reset";
+
+/*Components*/
+@import "components/navigation";
+@import "components/sidebar";
+@import "components/form";
+@import "components/loader";
+@import "components/compose-box";
+@import "components/lemon-navigation";
+@import "components/modals";
+
+/*Pages*/
+@import "pages/mail/mail";
+@import "pages/login/login";
+@import "pages/404/404";
+@import "pages/onboarding/onboarding";
+@import "pages/read_email/read_email";
+
+/*Icons*/
+@import "config/fonts";
+
+
+@import "vars";
+
+/*Scale the font-size for rems*/
+html{
+  font-size: 62.5%;
+}
+* {
+  font-family: $font-default;
+}

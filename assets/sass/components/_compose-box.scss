@@ -1,0 +1,76 @@
+@import "../vars";
+
+.compose-boxes{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-height: 66rem;
+  vertical-align: bottom;
+  z-index: 9999;
+  overflow: hidden;
+
+  .compose-box{
+    background-color: #fff;
+    display: inline-block;
+    margin: 0 1rem;
+    width: 60rem;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    vertical-align: bottom;
+
+    &.hidden{
+      overflow: hidden;
+      height: 4rem;
+    }
+
+    .compose-box-title{
+      display: inline-block;
+    }
+
+    .compose-box-body {
+      border: 1px solid #eee;
+    }
+
+    .compose-box-bar{
+      background-color: $color-primary;
+      height: 4rem;
+      color: #fff;
+      padding: 1.3rem;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      .exit{
+        float: right;
+        font-size: 1.3rem;
+        cursor: pointer;
+        &:hover{
+          color: darken(#fff,30);
+        }
+      }
+    }
+
+    input,textarea{
+      margin: 0;
+      border: 0;
+      border-bottom: 1px solid #eee;
+      font-family: inherit;
+    }
+
+    textarea{
+      resize: none;
+      font-size: 1.8rem;
+      font-family: $font-serif;
+    }
+    input[type=file]{
+      margin-left: 3rem;
+      height: auto;
+      border: 0;
+    }
+
+    input{
+      height: 4rem;
+    }
+    button{
+      margin: 0 0 1rem 1rem;
+    }
+  }
+}

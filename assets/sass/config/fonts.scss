@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "icons";
+  src:url("fonts/icons.eot");
+  src:url("fonts/icons.eot?#iefix") format("embedded-opentype"),
+  url("fonts/icons.woff") format("woff"),
+  url("fonts/icons.ttf") format("truetype"),
+  url("fonts/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-television:before {
+  content: "\61";
+}
+.icon-save-disk:before {
+  content: "\62";
+}
+.icon-power:before {
+  content: "\63";
+}
+.icon-pdf-button:before {
+  content: "\64";
+}
+.icon-padlock:before {
+  content: "\65";
+}
+.icon-arrow-down:before {
+  content: "\66";
+}
+.icon-arrow-left:before {
+  content: "\67";
+}
+.icon-arrow-right:before {
+  content: "\68";
+}
+.icon-arrow-up:before {
+  content: "\69";
+}
+.icon-avatar:before {
+  content: "\6a";
+}
+.icon-briefcase:before {
+  content: "\6b";
+}
+.icon-close:before {
+  content: "\6c";
+}
+.icon-controls:before {
+  content: "\6d";
+}
+.icon-facebook-logo:before {
+  content: "\6e";
+}
+.icon-google-logo:before {
+  content: "\6f";
+}
+.icon-graduation-cap:before {
+  content: "\70";
+}
+.icon-key:before {
+  content: "\71";
+}
+.icon-linkedin-logo:before {
+  content: "\72";
+}
+.icon-envelope:before {
+  content: "\73";
+}
+.icon-download:before {
+  content: "\74";
+}
+.icon-check:before {
+  content: "\76";
+}
+.icon-add-1:before {
+  content: "\77";
+}
+.icon-add:before {
+  content: "\75";
+}
+.icon-pencil:before {
+  content: "\78";
+}
+.icon-warning:before {
+  content: "\79";
+}
+.icon-down-dir:before {
+  content: "\7a";
+}
+.icon-eye:before {
+  content: "\41";
+}

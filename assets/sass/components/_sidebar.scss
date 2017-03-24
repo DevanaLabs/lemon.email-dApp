@@ -1,0 +1,82 @@
+@import '../vars';
+$sidebar-background: #00124f;
+$sidebar-text-color: #8F98B5;
+
+
+.left-sidebar{
+  display: inline-block;
+  width: 20rem;
+  height: calc(100vh - 70px);
+  font-size: 16px;
+  background-color: $sidebar-background;
+  border-right: 1px solid #c3c3c3;
+  position: relative;
+  box-sizing: border-box;
+
+  .logout-button{
+    @include button(6rem, 6rem, 0, $sidebar-background, $sidebar-text-color);
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    &:hover{
+      background-color: transparent;
+      color: #fff;
+    }
+    i{
+      font-size: 2.2rem;
+    }
+  }
+
+  ul{
+    .compose-button {
+      @include button(16rem, 4rem, 2px, white, $sidebar-background);
+      font-size: 1.4rem;
+      margin: 2rem auto;
+      display: block;
+    }
+    li{
+      //text-align: center;
+
+      i{
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      a{
+        display: block;
+        //text-align: center;
+        padding: 2rem;
+        color: $sidebar-text-color;
+        font-weight: bold;
+        text-decoration: none;
+        border-top: 1px solid #374986;
+        box-sizing: border-box;
+        text-transform: uppercase;
+
+        &.logo{
+          padding: 1rem 0;
+          border: 0;
+          height: 8rem;
+          img{
+            height: 6rem;
+          }
+        }
+
+        &:hover{
+          color: #fff;
+        }
+      }
+
+      &:last-of-type a{
+        border-bottom: 1px solid #374986;
+      }
+
+      a.active{
+        background-color: #374986;
+        color: #fff;
+      }
+    }
+  }
+}

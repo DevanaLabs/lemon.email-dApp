@@ -1,0 +1,32 @@
+.page-not-found{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 27rem;
+  width: 40rem;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Fira Mono", serif;
+
+  img{
+    max-width: 30rem;
+    margin-bottom: 3rem;
+  }
+
+  .go-back{
+    margin-top: 4rem;
+    @include button(30rem,5.5rem, 0.5rem,  #58BD57, #fff);
+    display: inline-block;
+    text-decoration: none;
+    line-height: 5.5rem;
+    border: 1px solid #40a23f;
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px 0 #327d31;
+    font-family: 'Lato', sans-serif;
+  }
+}

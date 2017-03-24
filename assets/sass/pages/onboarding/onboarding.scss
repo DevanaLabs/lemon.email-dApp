@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono&subset=latin-ext);
+
+.onboard-container{
+  max-width: 1170px;
+  width: 70%;
+  font-family: "Fira Mono", serif;
+}
+
+#main-form-holder {
+  color: #555;
+  background: white;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0,0,0, .5);
+
+  h1{
+    font-size: 3.6rem;
+    text-align: center;
+  }
+}
+.signup-section {
+  margin: 50px auto 0;
+  padding: 0 0 50px;
+  border-bottom: 1px solid #EEE;
+
+  h3{
+    font-size: 2.4rem;
+    margin-bottom: 1.3rem;
+  }
+}
+
+.input-group{
+  & > * {
+    vertical-align: top;
+  }
+  &.half{
+    input{
+      width: calc(50% - 20px);
+    }
+  }
+
+  input{
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+    width: calc(100% - 40px);
+    height: 34px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    font-family: inherit;
+
+    &:focus{
+      border-color: #66afe9;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    }
+
+    &:last-child{
+      border-radius: 0;
+    }
+  }
+
+  .input-group-addon{
+    width: 40px;
+    display: inline-block;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    height: 34px;
+    font-size: 1.4rem;
+    padding-top: 0.9rem;
+  }
+
+  .input-group-btn{
+    width: 40px;
+    box-sizing: border-box;
+    float: right;
+
+    button{
+      height: 34px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      width: 100%;
+      border-left: none;
+      border-top-right-radius: 0.4rem;
+      border-bottom-right-radius: 0.4rem;
+      outline: 0;
+      font-size: 1.4rem;
+
+      &:hover{
+        background-color: #e6e6e6;
+        cursor: pointer;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+      }
+      &:active{
+        -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+      }
+    }
+  }
+}
+
+.tier-button{
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  .button-title{
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    display: block;
+  }
+  .button-description{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    display: block;
+  }
+
+  &:hover{
+    background-color: #e6e6e6;
+    cursor: pointer;
+  }
+  &:active{
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
+}
+
+.signup-section:last-of-type {
+  border: 0;
+}
+.tier-pick-button {
+  margin: 10px 0;
+}
+#section-tos {
+  font-size: 1.5rem;
+  text-align: center;
+}

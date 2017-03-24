@@ -1,0 +1,432 @@
+@import "../../vars";
+
+@include scrollbars(0.5rem, #b3b3b3, #d9d9d9);
+
+.app-wrapper{
+  overflow: hidden;
+}
+
+.main-content {
+  display: inline-block;
+  height: calc(100vh - 70px);
+  width: calc(100% - 20rem);
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+
+  section{
+    font-size: 0;
+  }
+
+  .tools{
+    padding: .5rem 1rem 0;
+    box-sizing: border-box;
+    text-align: right;
+
+    .pagination-buttons{
+      .pagination-page-number{
+        float: left;
+        margin-right: 1rem;
+        line-height: 3rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      button{
+        @include button(3rem,3rem,0,transparent,#333);
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+        border-radius: 100%;
+        padding: 0;
+
+        i.icon-arrow-left{
+          position: relative;
+          top: 0.15rem;
+          right: 0.1rem;
+        }
+        i.icon-arrow-right{
+          position: relative;
+          top: 0.15rem;
+          left: 0.1rem;
+        }
+
+        &:last-child{
+          margin-right: 0;
+        }
+
+        &:not([disabled]):hover{
+          background: #eee;
+        }
+      }
+    }
+  }
+
+  .no-emails{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 280px;
+    width: 200px;
+    text-align: center;
+
+    img{
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1{
+      font-size: 2rem;
+    }
+  }
+
+  .mails-wrapper-header{
+    height: 4.5rem;
+    border-bottom: 1px solid #eaeeef;
+    box-sizing: border-box;
+
+    .dashboard-link{
+      font-size: 1.6rem;
+      color: #1c262b;
+      text-decoration: none;
+      float: right;
+      margin-top: 1.3rem;
+      margin-right: 2rem;
+      font-weight: bold;
+
+      &:hover {
+        color: #fcdf21;
+      }
+    }
+
+    .top-bar-menu{
+      float: right;
+      font-size: 1.3rem;
+
+      .user-info{
+        cursor: pointer;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+      }
+
+      .username, i{
+        display: inline;
+        margin-left: 1rem;
+        position: relative;
+        top: -1rem;
+      }
+
+      i{
+        margin-right: 1rem;
+        animation: 0.2s fadeIn ease;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      i.down{
+        transform: scaleY(-1);
+      }
+
+      .avatar{
+        display: inline-block;
+        height: 3.5rem;
+        width: 3.5rem;
+        margin-top: 0.5rem;
+        background-color: #2d2d2d;
+        border-radius: 100%;
+
+        img{
+          margin: 0.25rem;
+          height: 3rem;
+          width: 3rem;
+        }
+      }
+
+      .toggled-menu{
+        background-color: #fff;
+        border: 1px solid #eaeeef;
+        position: absolute;
+        z-index: 9999;
+        right: 0.5rem;
+        width: 20rem;
+        text-align: center;
+        margin-top: 0.5rem;
+        padding: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        animation: show 0.5s linear;
+        animation-fill-mode: forwards;
+
+        a{
+          display: block;
+          font-size: 1.6rem;
+          color: #1c262b;
+          font-weight: bold;
+          text-decoration: none;
+          padding-bottom: 1rem;
+          margin-top: 1rem;
+          border-bottom: 1px solid #eaeeef;
+
+          &:hover {
+            color: #fcdf21;
+          }
+          &:first-child{
+            margin-top: 0;
+          }
+          &:last-child{
+            border: 0;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .mails-wrapper{
+    position: relative;
+    display: inline-block;
+    overflow: auto;
+    height: calc(100vh - 7rem);
+    width: 45rem;
+    background: #fbfbfb;
+  }
+
+  .mail-item {
+    position: relative;
+    display: block;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    vertical-align: top;
+    color: $content-text-color;
+    border: solid 1px #e9e9e9;
+    margin: 10px;
+    background-color: #fbfbfb;
+
+    &.active {
+      background: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    //&:first-child{
+    //  border-top: none;
+    //}
+
+    //&:last-child{
+    //  border-bottom: 1px solid #eaeeef;
+    //}
+
+    //
+    //&:hover {
+    //  background-color: #7bc3d1;
+    //  color: #fff;
+    //  border: 1px solid #8bc3d1;
+    //}
+    //
+    //&:hover .mail-item-time{
+    //  color: #fff;
+    //}
+
+    span{
+      display: block;
+    }
+
+    &:link {
+      color: $content-text-color;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $content-text-color;
+    }
+
+    .mail-item-subject{
+      font-weight: bold;
+      font-size: 1.6rem;
+      //text-overflow: ellipsis;
+      //white-space: nowrap;
+      //overflow: hidden;
+      line-height: 3rem;
+      color: #333;
+    }
+
+    .mail-item-from{
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .mail-item-time{
+      font-size: 1.2rem;
+      color: #9aa8af;
+      float: right;
+      color: #333;
+    }
+
+    .mail-item-message{
+      font-size: 1.3rem;
+      max-height: 53px;
+      overflow: hidden;
+      line-height: 1.7rem;
+    }
+  }
+}
+
+.single-mails{
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 45rem);
+  height: calc(100vh - 4.5rem);
+  box-sizing: border-box;
+  float: right;
+  font-size: 1.6rem;
+  overflow: auto;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+
+  .mail-actions {
+    border-bottom: 1px solid #eee;
+    padding: 0 5rem;
+    a {
+      height: 4.5rem;
+      display: inline-block;
+      line-height: 4.5rem;
+      font-size: 1.3rem;
+      color: #999;
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 30px;
+      &:before {
+        margin-right: 8px;
+        line-height: 4.5rem;
+        vertical-align: top;
+      }
+    }
+    .mail-navigation {
+      float: right;
+      a {
+        margin: 0 0 0 30px;
+      }
+    }
+  }
+
+  .placeholder{
+    margin-top: 5rem;
+    text-align: center;
+    color: #c3c3c3;
+  }
+}
+
+.single-mail {
+  font-size: 14px;
+  color: $content-text-color;
+  padding: 3rem 5rem;
+  border-bottom: 1px solid #eee;
+
+  //& + .single-mail{
+  //  border-top: 1px solid #c0c0c0;
+  //  margin-top: 3rem;
+  //}
+
+
+
+  .single-mail-subject {
+    //font-size: 1.76rem;
+    //padding: 1rem 0;
+    //border-bottom: 0.1rem solid #eaeeef;
+
+    padding: 15px 0 0;
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+    color: #333;
+    font-weight: bold;
+
+    &::after {
+      display: block;
+      content: '';
+      background: #333;
+      width: 50px;
+      height: 3px;
+      margin-top: 15px
+    }
+  }
+  .single-mail-date-inline {
+    float: right;
+    font-weight: normal;
+  }
+
+  .single-mail-from {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  .single-mail-to {
+    margin-top: 5px;
+  }
+
+  .single-mail-date {
+    margin-top: 5px;
+  }
+
+  .single-mail-body {
+    margin: 20px 0;
+    line-height: 1.67;
+    font-family: $font-serif;
+    font-size: 1.8rem;
+    white-space: pre-line;
+  }
+
+  .attachments-list{
+
+  }
+
+  .single-mail-attachment{
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 1rem;
+    display: block;
+    margin: 1rem 0;
+    font-weight: bold;
+
+    span{
+      margin-left: 1rem;
+    }
+
+    &:hover{
+      //background-color: #2c3338;
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
+
+@keyframes show {
+  0%{
+    max-height: 0;
+  }
+  100%{
+    max-height: 15rem;
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

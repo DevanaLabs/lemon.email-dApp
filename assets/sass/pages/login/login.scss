@@ -1,0 +1,140 @@
+@import '../../vars';
+
+$login-bgcolor: #2c3338;
+$login-input-color: #3b4148;
+$login-input-wrapper-color: #363b41;
+$login-text-color: #606468;
+
+.auth-background {
+
+  .form-wrapper {
+    //min-height: calc(100vh - 8rem);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.auth-form {
+  max-width: 900px;
+  //height: 33rem;
+  text-align: center;
+  margin: 50px auto;
+  padding: 50px;
+
+  &.unlock {
+    height: 22rem;
+  }
+
+  .auth-title {
+    color: $color-primary;
+    font-size: 4.2rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    font-family: $font-default;
+  }
+
+  .auth-description {
+    font-size: 2.6rem;
+    line-height: 1.23em;
+    color: #666;
+  }
+  .auth-warning {
+    color: $status-err;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+
+  .auth-input {
+    margin: 3rem auto;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    vertical-align: top;
+    height: 70px;
+    width: 420px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    line-height: 70px;
+    font-family: $font-default;
+    color: #666;
+    display: block;
+
+    &.error {
+      border: 1px solid $status-err;
+    }
+
+    &:focus {
+      box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.2);
+    }
+  }
+
+  .form-loader {
+    position: relative;
+    font-size: 1.6rem;
+    vertical-align: top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .uil-ring-css{
+      height: 3rem;
+      width: 3rem;
+    }
+    .uil-ring-css > div{
+      height: 3rem;
+      width: 3rem;
+      margin-left: 2rem;
+      box-shadow: 0 2px 0 0 #2d2d2d;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .icon-holder {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+
+    i {
+      color: $login-text-color;
+    }
+  }
+
+  .auth-button {
+    @include button(42rem, 7rem, 0, $color-primary, white);
+    display: block;
+    margin: 3rem auto;
+    font-weight: bold;
+    transition: background .3s;
+  }
+
+  .error-message {
+    font-size: 14px;
+    color: $status-err;
+    max-width: 28rem;
+    margin: 15px auto;
+  }
+
+  .register {
+    display: inline-block;
+    float: right;
+    color: #c3c3c3;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-decoration: none;
+
+    &:hover {
+      color: darken(#c3c3c3, 10);
+    }
+  }
+
+  .username {
+    position: absolute;
+    right: 1rem;
+    color: $login-text-color;
+    top: 1.8rem;
+    font-size: 1.3rem;
+    z-index: 2;
+
+  }
+}
+

@@ -1,0 +1,21 @@
+.main-navigation{
+  height: 5rem;
+  background-color: #2d2d2d;
+
+  .logo{
+    height: 5rem;
+    margin-left: 5rem;
+  }
+
+  .logout-button{
+    background-color: #2d2d2d;
+    color: #fff;
+    border: none;
+    outline: none;
+    float: right;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,115 @@
+@import "../../vars";
+
+.read-email-form{
+  width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  .error-message{
+    font-size: 1.5rem;
+    color: #ed5e68;
+    margin-bottom: 2rem;
+  }
+  h1{
+    font-family: $font-default;
+    text-align: center;
+    color: $color-primary;
+    font-size: 4.2rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+  }
+  label,input{
+    display: block;
+    margin: 0 auto;
+  }
+  label{
+    font-size: 2.6rem;
+    line-height: 1.23em;
+    color: #666;
+  }
+  input[readonly]{
+    background-color: #f6f6f6;
+  }
+  input[type=text]{
+    margin: 3rem auto;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    vertical-align: top;
+    height: 70px;
+    width: 420px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    line-height: 70px;
+    font-family: $font-default;
+    color: #666;
+    display: block;
+
+    &.error {
+      border: 1px solid $status-err;
+    }
+
+    &:focus {
+      box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.2);
+    }
+  }
+  .lemon-button{
+    @include button(42rem, 7rem, 0, $color-primary, white);
+    display: block;
+    margin: 3rem auto;
+    font-weight: bold;
+    transition: background .3s;
+  }
+}
+
+.external-mail-preview{
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  .show-reply, .hide-reply {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $font-default;
+    float: right;
+    position: relative;
+    background-color: $color-primary;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: padding 0.3s ease;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+    display: none;
+    &.active {
+      display: inline-block;
+    }
+    &:hover{
+      opacity: .8;
+    }
+  }
+  .hide-reply {
+    background: #820e0e;
+  }
+  .reply-wrapper {
+    display: none;
+    &.active {
+      display: block;
+    }
+    input[type=file] {
+      margin: 2rem 0;
+      height: auto;
+      width: 400px;
+    }
+    button[type=submit] {
+      float: right;
+    }
+  }
+}

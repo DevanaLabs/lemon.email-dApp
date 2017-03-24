@@ -1,0 +1,27 @@
+@mixin button($width, $height, $border-radius, $bgColor, $color){
+  width: $width;
+  height: $height;
+  line-height: $height;
+  border-radius: $border-radius;
+  outline: none;
+  border: none;
+  background-color: $bgColor;
+  color: $color;
+  font-size: 2.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover{
+    background-color: lighten($bgColor,5);
+  }
+  &:active{
+    background-color: darken($bgColor,5);
+  }
+  &[disabled]{
+    color: #b3b3b3;
+  }
+  &[disabled]:hover, &[disabled]:active {
+    background: $bgColor;
+  }
+}
