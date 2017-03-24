@@ -4,3 +4,9 @@
 
 Lemon dApp is a world's first encrypted and decentalized e-mail service. 
 
+# The changelog
+
+### Alpha 0.1
+
+- Initial alpha release
+
