@@ -3,7 +3,6 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
-  devtool: 'source-map',
   entry: [
     './assets/react/'
   ],
