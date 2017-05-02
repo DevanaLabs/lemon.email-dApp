@@ -28,7 +28,7 @@ You should receive the following hash:
 QmUMQ2Jvdds8673Su5CVXfPPjN6HfW1LPyuyqpBZxmjuN5
 ```
 
-You can then access the app through an IPFS gateway, e.g. https://ipfs.io/ipfs/QmXE1UWWNNMwfALLHRDyDhVv9jYgg7f4SytjQ6EumufJRj
+You can then access the app through an IPFS gateway, e.g. https://ipfs.io/ipfs/QmUMQ2Jvdds8673Su5CVXfPPjN6HfW1LPyuyqpBZxmjuN5
 
 # The changelog
 
