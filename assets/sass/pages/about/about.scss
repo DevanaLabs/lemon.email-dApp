@@ -1,0 +1,259 @@
+
+.about {
+  background-color: #0a0c16;
+  color: white;
+
+  header {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
+    background: rgba(#15192D, 0);
+    transition: all .3s;
+    z-index: 100;
+    #secondary-logo {
+      opacity: 0;
+      position: absolute;
+      top: 0
+    }
+    #header-wrapper {
+      #header-logo {
+        #primary-logo {
+          padding: 37px 0;
+        }
+      }
+      .header-menu-wrapper {
+        color: white;
+      }
+      .header-link-wrapper {
+        .header-link {
+          font-weight: 500;
+          margin: 35px 10px;
+        }
+      }
+    }
+    &.overlaid {
+      box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
+      background: rgba(#15192D, 1);
+      #header-wrapper {
+        .header-link {
+          color: white;
+          opacity: .6 !important;
+        }
+        .header-menu-wrapper {
+          color: white;
+        }
+        .header-separator {
+          border-color: white;
+          margin: 20px 10px;
+          height: 30px;
+          @media screen and (max-width: 860px){
+            width: 100%;
+            height: 0;
+            margin: 0;
+          }
+        }
+      }
+      @media screen and (min-width: 860px) {
+        height: 70px;
+        #header-wrapper {
+          #header-logo {
+            #primary-logo {
+              padding: 23px 0;
+            }
+          }
+          .header-link {
+            margin: 20px 5px;
+          }
+          .header-menu-wrapper {
+            //margin: 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .action-button {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 40px;
+    height: 50px;
+    line-height: 50px;
+    margin: 10px 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    background: white;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s;
+    letter-spacing: 0.1rem;
+    vertical-align: top;
+    border-radius: 2px;
+  }
+
+  .fixed-width-section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .landing-feature-wrapper {
+    border-bottom: 1px solid #1e1e2e;
+    @media screen and (min-width: 860px) {
+      padding: 130px 20px;
+    }
+
+    @media screen and (max-width: 860px) {
+      > * {
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+    }
+    .image-wrapper {
+      @media screen and (min-width: 860px) {
+        display: inline-block;
+        width: 33%;
+      }
+      text-align: center;
+
+    }
+    .text-wrapper {
+      @media screen and (min-width: 860px) {
+        display: inline-block;
+        width: 66%;
+      }
+      h2 {
+        font-size: 2.8rem;
+        font-weight: 500;
+        letter-spacing: -1.4px;
+        margin-bottom: 20px;
+        max-width: 750px;
+      }
+      p {
+        font-size: 1.8rem;
+        line-height: 1.67;
+        letter-spacing: -0.2px;
+        opacity: .5;
+        font-weight: 300;
+        max-width: 750px;
+      }
+      a {
+        color: #35e9f7;
+      }
+    }
+  }
+
+  #section-hero-wrapper {
+    background-image: linear-gradient(90deg, rgb(21, 25, 45), rgb(21, 25, 45), rgb(138, 19, 29), rgb(138, 19, 29));
+  }
+  #section-hero {
+    background-image: linear-gradient(139deg, rgba(59, 95, 219, 0), rgba(255, 14, 14, 0.5));
+    background-image: url("../images/bg_darpp-hero.png");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    @media screen and (min-width: 1921px) {
+      background-size: cover;
+    }
+    padding: 140px 0 60px;
+    @media screen and (max-width: 860px){
+      background-size: cover;
+    }
+    h1 {
+      font-size: 4.2rem;
+      margin: 0;
+      letter-spacing: -0.15rem;
+      font-weight: bold;
+      padding: 0 20px 35px;
+      span {
+        font-weight: 600;
+      }
+    }
+    h2 {
+      margin: 20px 0 40px;
+      padding: 0 20px;
+      font-size: 2.2rem;
+      max-width: 775px;
+      font-weight: 300;
+      @media screen and (max-width: 775px) {
+        margin-top: 10px;
+        font-size: 2.4rem;
+      }
+    }
+    p {
+      margin: 20px 0 40px;
+      padding: 0 20px;
+      font-size: 1.6rem;
+      max-width: 775px;
+      font-weight: 300;
+      opacity: .8;
+      @media screen and (max-width: 775px) {
+        margin-top: 10px;
+        font-size: 2.4rem;
+      }
+    }
+    a {
+      color: #a5d8de;
+    }
+    #action-wrapper {
+      margin: 40px auto;
+      font-size: 0;
+      position: relative;
+      a {
+        color: #32203f;
+      }
+      @media screen and (max-width: 775px) {
+        margin: 30px 0 0;
+      }
+      #action-dashboard {
+        width: 400px;
+        padding: 15px;
+        line-height: 30px;
+        height: 80px;
+        span {
+          font-size: 1.6rem;
+          font-weight: normal;
+          text-transform: none;
+          display: block;
+          line-height: 1rem;
+          color: white;
+        }
+      }
+    }
+  }
+
+  #section-decentralized {
+    @media screen and (min-width: 860px) {
+      background-image: url("../images/bg_darpp-below.png");
+      background-position: top center;
+      background-repeat: no-repeat;
+      @media screen and (min-width: 1921px) {
+        background-size: cover;
+      }
+    }
+  }
+
+  footer {
+    background-color: $color-secondary;
+    padding: 50px 0 90px;
+    text-align: center;
+    h4 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin: 1rem auto;
+      letter-spacing: 1.7px;
+    }
+    a {
+      display: block;
+      color: white;
+      opacity: .5;
+      font-size: 1.4rem;
+      line-height: 3rem;
+      font-weight: 300;
+      text-decoration: none;
+    }
+  }
+}

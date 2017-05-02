@@ -63,23 +63,25 @@
   }
 
   .no-emails{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //right: 0;
+    //bottom: 0;
+    margin: 5rem auto;
     height: 280px;
-    width: 200px;
+    width: 300px;
     text-align: center;
 
-    img{
-      width: 200px;
-      margin-bottom: 20px;
-    }
+    //img{
+    //  width: 200px;
+    //  margin-bottom: 20px;
+    //}
 
     h1{
       font-size: 2rem;
+      line-height: 1.5em;
+      color: #666;
     }
   }
 
@@ -199,6 +201,9 @@
     height: calc(100vh - 7rem);
     width: 45rem;
     background: #fbfbfb;
+    @media screen and (max-width: 1200px) {
+      width: 35rem;
+    }
   }
 
   .mail-item {
@@ -261,17 +266,28 @@
       color: #333;
     }
 
-    .mail-item-from{
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #333;
-    }
+    > div {
+      text-align: right;
+      .mail-item-from{
+        font-size: 1.2rem;
+        color: #333;
+        float: left;
+      }
 
-    .mail-item-time{
-      font-size: 1.2rem;
-      color: #9aa8af;
-      float: right;
-      color: #333;
+      .mail-item-time{
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        color: #333;
+      }
+
+
+      @media screen and (max-width: 1200px) {
+        text-align: left;
+        .mail-item-from{
+          float: none;
+          margin-bottom: 0.5rem;
+        }
+      }
     }
 
     .mail-item-message{
@@ -295,6 +311,9 @@
   border: 1px solid #eee;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06);
 
+  @media screen and (max-width: 1200px) {
+    width: calc(100% - 35rem);
+  }
   .mail-actions {
     border-bottom: 1px solid #eee;
     padding: 0 5rem;
@@ -326,7 +345,7 @@
   .placeholder{
     margin-top: 5rem;
     text-align: center;
-    color: #c3c3c3;
+    color: #666;
   }
 }
 
@@ -342,6 +361,9 @@
   //}
 
 
+  h3 {
+    margin: .5rem 0;
+  }
 
   .single-mail-subject {
     //font-size: 1.76rem;
@@ -381,10 +403,27 @@
     margin-top: 5px;
   }
 
+  .single-mail-meta-wrapper {
+    background-color: #eee;
+    padding: 1px 5px;
+    clear: both;
+    .single-mail-meta {
+      line-height: 1.2em;
+      font-family: monospace;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      a {
+        color: #666 !important;
+        font-family: monospace;
+      }
+    }
+  }
+
   .single-mail-body {
     margin: 20px 0;
     line-height: 1.67;
-    font-family: $font-serif;
+    font-family: $font-default;
     font-size: 1.8rem;
     white-space: pre-line;
   }

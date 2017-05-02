@@ -16,27 +16,24 @@ const Sidebar = ({location, logoutUser, add_compose_box}) => (
                 Compose
             </button>
             <li>
-                <Link className={location.pathname === "/" ? "active" : ""} activeClassName={"active"} to="/type/inbox">
+                <Link className={location.pathname === "/mail" ? "active" : ""} activeClassName={"active"} to="/mail/type/inbox">
                     {/*<i className="icon-envelope"></i>*/}
                     Inbox
                 </Link>
             </li>
             <li>
-                <Link activeClassName={"active"} to="/type/sent">
+                <Link activeClassName={"active"} to="/mail/type/sent">
                     {/*<i className="icon-arrow-up"></i>*/}
                     Sent
                 </Link>
             </li>
-
-            <button className="logout-button" onClick={logoutUser}> <i className="icon-power"></i> Logout</button>
         </ul>
     </aside>
 );
 
 
 Sidebar.propTypes = {
-    location: React.PropTypes.object.isRequired,
-    logoutUser: React.PropTypes.func.isRequired
+    location: React.PropTypes.object.isRequired
 };
 
 export default Sidebar;

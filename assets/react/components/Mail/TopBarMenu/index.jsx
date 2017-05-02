@@ -6,13 +6,13 @@ import { bindActionCreators } from 'redux';
 import avatar from './assets/lemon-logo-gray.png';
 import * as actions from '../../../actions/topBarActions';
 
-const TopBarMenu = ({ toggled, toggleTopMenu }) => (
+const TopBarMenu = ({ toggled, toggleTopMenu, emailAddress }) => (
     <div className="top-bar-menu">
         <div className="user-info" onClick={toggleTopMenu}>
             <div className="avatar">
                 <img src={avatar} alt="Avatar"/>
             </div>
-            <p className="username">{localStorage.getItem("from")}</p>
+            <p className="username">{ emailAddress }</p>
             <i className={toggled ? "icon-arrow-up down" : "icon-arrow-up"}></i>
         </div>
         {
@@ -25,7 +25,7 @@ const TopBarMenu = ({ toggled, toggleTopMenu }) => (
     </div>
 );
 
-const mapStateToProps = (state) => ( state.topBar );
+const mapStateToProps = (state) => ( { ...state.topBar, ...state.register } );
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators(actions, dispatch);

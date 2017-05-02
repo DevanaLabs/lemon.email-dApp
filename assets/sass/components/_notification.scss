@@ -1,0 +1,66 @@
+.mail-notification {
+    opacity: 0;
+    transform: translateY(-100px);
+    pointer-events: none;
+    position: absolute;
+    top: -30px;
+    left: 49%;
+    left: calc(50% - 150px);
+    width: 300px;
+    background-color: $status-ok;
+    padding: 10px 20px;
+    z-index: 100;
+    text-align: center;
+    transition: opacity .2s, transform .2s;
+&.error {
+     background-color: $status-err;
+ }
+&.active {
+     top: 30px;
+     display: block;
+     opacity: 1;
+     transform: translateY(0px);
+     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+ }
+span {
+    color: white;
+    line-height: 1.4em;
+    font-size: 1.4rem;
+&.title {
+     font-size: 1.8rem;
+     font-weight: bold;
+     display: block;
+ }
+}
+}
+
+.auth-wrapper {
+  padding: 50px 10px;
+  margin: 0 auto;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: linear-gradient(148deg, #0E0E16, #1C1529, #860D11);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    color: white;
+    font-size: 4.2rem;
+    margin: 0 auto;
+    font-weight: 700;
+    width: 500px;
+    line-height: 1.2;
+  }
+  .no-eth-notification {
+    margin: 20px auto 0;
+    font-size: 1.4rem;
+    color: white;
+    width: 500px;
+    line-height: 1.7;
+    a {
+      color: inherit;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

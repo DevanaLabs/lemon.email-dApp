@@ -1,6 +1,6 @@
 @import '../vars';
 $sidebar-background: #00124f;
-$sidebar-text-color: #8F98B5;
+$sidebar-text-color: #888;
 
 
 .left-sidebar{
@@ -8,8 +8,8 @@ $sidebar-text-color: #8F98B5;
   width: 20rem;
   height: calc(100vh - 70px);
   font-size: 16px;
-  background-color: $sidebar-background;
-  border-right: 1px solid #c3c3c3;
+  background-color: rgba($color-primary, .1);
+  border-right: 1px solid #ccc;
   position: relative;
   box-sizing: border-box;
 
@@ -31,7 +31,7 @@ $sidebar-text-color: #8F98B5;
 
   ul{
     .compose-button {
-      @include button(16rem, 4rem, 2px, white, $sidebar-background);
+      @include button(16rem, 4rem, 2px, $color-primary, white);
       font-size: 1.4rem;
       margin: 2rem auto;
       display: block;
@@ -51,7 +51,7 @@ $sidebar-text-color: #8F98B5;
         color: $sidebar-text-color;
         font-weight: bold;
         text-decoration: none;
-        border-top: 1px solid #374986;
+        border-top: 1px solid #ccc;
         box-sizing: border-box;
         text-transform: uppercase;
 
@@ -65,17 +65,17 @@ $sidebar-text-color: #8F98B5;
         }
 
         &:hover{
-          color: #fff;
+          color: #555;
         }
       }
 
       &:last-of-type a{
-        border-bottom: 1px solid #374986;
+        border-bottom: 1px solid #ccc;
       }
 
       a.active{
-        background-color: #374986;
-        color: #fff;
+        background-color: white;
+        color: #333;
       }
     }
   }

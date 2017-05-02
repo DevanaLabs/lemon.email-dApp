@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import logo from '../../../images/logo-white.svg';
+import logo from '../../../images/logo-blue.svg';
 
 const NotFound = () => (
     <div className="page-not-found">

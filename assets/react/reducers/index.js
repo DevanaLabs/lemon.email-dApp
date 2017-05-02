@@ -4,11 +4,11 @@ import { singleMail, mail_sender } from './mailsReducer';
 import register from './registerReducer';
 import urlLocation from './urlLocationReducer';
 import composebox from './composeBoxReducer';
-import login from './loginReducer';
 import pagination from './paginationReducer';
 import readExternal from './readExternalReducer';
 import unlock from './unlockReducer';
 import topBar from './topBarReducer';
+import notifications from './notificationsReducer';
 import { routerReducer } from 'react-router-redux';
 
 const appReducer = combineReducers({
@@ -22,7 +22,7 @@ const appReducer = combineReducers({
     mail_sender,
     mailData,
     readExternal,
-    login,
+    notifications,
     routing: routerReducer
 });
 

@@ -1,6 +1,3 @@
-/*Fonts*/
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Lato:400,700&amp;subset=latin-ext');
-
 /*Mixins*/
 @import "mixins/mixins";
 
@@ -15,13 +12,17 @@
 @import "components/compose-box";
 @import "components/lemon-navigation";
 @import "components/modals";
+@import "components/notification";
+
+@import "font";
 
 /*Pages*/
 @import "pages/mail/mail";
 @import "pages/login/login";
 @import "pages/404/404";
-@import "pages/onboarding/onboarding";
 @import "pages/read_email/read_email";
+@import "pages/landing/landing";
+@import "pages/about/about";
 
 /*Icons*/
 @import "config/fonts";

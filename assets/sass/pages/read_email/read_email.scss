@@ -102,6 +102,8 @@
     display: none;
     &.active {
       display: block;
+      border-top: #444 1px solid;
+      padding-top: 1rem;
     }
     input[type=file] {
       margin: 2rem 0;
@@ -111,5 +113,8 @@
     button[type=submit] {
       float: right;
     }
+  }
+  .info-text {
+    color: #d83d3d;
   }
 }

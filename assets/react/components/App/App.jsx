@@ -1,33 +1,51 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../../actions/loginActions';
 import * as composeActions from '../../actions/composeBoxActions';
+import * as registerActions from '../../actions/registerActions';
+import eth from './../../../../modules/ethereumService';
 
 import Sidebar from '../Layout/Sidebar/';
 import ComposeBox from '../Mail/ComposeBox/';
-import TrialExpiredModal from '../Modals/TrialExpiredModal';
 import logo from '../../../images/logo-white.svg';
 
 const App = React.createClass ({
-  componentWillMount() {
-    if(localStorage.getItem("privateKey") === null) {
-      browserHistory.push('/register');
+  getInitialState(){
+    return {
+      ethInitialized: false
     }
   },
-  render(){
+  componentDidMount() {
+    if(!this.props.register.privateKey) {
+      window.location.hash = "/auth";
+    }
+
+    eth.initialize(function(connected) {
+      if(!connected) {
+        console.log("Not connected to the Ethereum network");
+        return true;
+      }
+
+      this.setState({ ethInitialized : true });
+    }.bind(this));
+  },
+  render() {
+    if(!this.state.ethInitialized) {
+      return null;
+    }
+
     return(
       <div className="app-wrapper">
         <header className="full-width">
           <div id="header-wrapper">
-            <a id="header-logo" href="/">
+            <a id="header-logo" href="#">
               <img src={logo}/>
             </a>
 
             <div className="header-link-wrapper">
-              <a className="header-link mail" href="https://webmail.lemon.email/">Switch to classic</a>
-              <a className="header-link username" href="https://lemon.email/dashboard">{localStorage.getItem("from")}</a>
+              {this.props.register.emailAddress &&
+              <a className="header-link username" href="/#/mail">{this.props.register.emailAddress}</a>
+              }
             </div>
           </div>
         </header>
@@ -36,8 +54,6 @@ const App = React.createClass ({
         <main className="main-content">
           {React.cloneElement({...this.props}.children, {...this.props})}
         </main>
-
-        <TrialExpiredModal isOpen={this.props.login.isLowBalance}/>
 
         <ComposeBox
           composers={this.props.composebox}
@@ -50,7 +66,7 @@ const App = React.createClass ({
 
 //Connect to store
 const mapStateToProps = (state) => ( state );
-const mapDispatchToProps = (dispatch) => ( bindActionCreators({ ...actions, ...composeActions}, dispatch) );
+const mapDispatchToProps = (dispatch) => ( bindActionCreators({...composeActions, ...registerActions}, dispatch) );
 const SecureApp = connect(
   mapStateToProps,
   mapDispatchToProps

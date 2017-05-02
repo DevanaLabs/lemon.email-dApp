@@ -3,12 +3,12 @@
 header {
   height: 70px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
-  background: rgba($color-primary, 1);
+  background: rgba($color-secondary, 1);
   overflow: hidden;
   &.open {
     @media screen and (max-width: 860px) {
       box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
-      background: rgba($color-primary, 1);
+      background: rgba($color-secondary, 1) !important;
       height: auto !important;
       #header-wrapper {
         padding-bottom: 20px;
@@ -40,6 +40,9 @@ header {
 
     .header-link-wrapper {
       float: right;
+      @media screen and (max-width: 860px) {
+        display: none;
+      }
     }
     .header-link {
       line-height: 30px;
@@ -56,12 +59,15 @@ header {
       opacity: .6;
       //transition: opacity .2s, border .2s;
       transition: margin .3s;
+      @media screen and (max-width: 860px) {
+        margin: 10px 0;
+        padding: 10px;
+      }
       &.active {
         opacity: 1;
       }
       &.primary {
         opacity: 1;
-        text-transform: uppercase;
       }
       &.mail {
         border: 1px solid;
@@ -69,10 +75,9 @@ header {
         padding: 2px 20px 0 !important;
       }
       &.username {
-        background: #3859C7;
+        background: $color-primary;
         border-radius: 16px;
-        border: 1px solid #3859C7;
-        padding: 2px 20px 0 !important;
+        padding: 3px 20px 1px !important;
         opacity: 1;
         font-weight: normal;
       }
@@ -85,10 +90,17 @@ header {
     .header-separator {
       border-left: 1px solid white;
       opacity: .1;
-      margin: 10px 10px;
+      margin: 24px 10px;
       height: 48px;
       display: inline-block;
       vertical-align: top;
+      @media screen and (max-width: 860px){
+        width: 100%;
+        height: 0;
+        margin: 0;
+        border-top: 1px solid white;
+        vertical-align: middle;
+      }
     }
     .header-menu-wrapper {
       display: none;
@@ -102,7 +114,10 @@ header {
       transform: rotate(90deg);
       transition: margin .3s;
       cursor: pointer;
-      color: $color-primary;
+      color: white;
+      @media screen and (max-width: 860px) {
+        display: inline-block;
+      }
     }
   }
   &.full-width {

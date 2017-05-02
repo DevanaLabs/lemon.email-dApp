@@ -1,7 +1,10 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
+import { useRouterHistory } from 'react-router';
+import { createHistory } from 'history';
+
 
 // import the root reducer
 import rootReducer from './reducers/index';
@@ -18,7 +21,7 @@ const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore)
 
 const store = createStoreWithMiddleware(rootReducer, defaultState, reduxDevToolsEnchancer);
 
-export const history = syncHistoryWithStore(browserHistory, store);
+export const history = syncHistoryWithStore(hashHistory, store);
 
 if(module.hot) {
     module.hot.accept('./reducers/',() => {
@@ -28,4 +31,3 @@ if(module.hot) {
 }
 
 export default store;
-

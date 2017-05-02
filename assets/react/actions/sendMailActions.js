@@ -1,6 +1,6 @@
-import { browserHistory } from 'react-router'
 import { remove_compose_box } from './composeBoxActions';
-import mailerService from './../../../modules/mailerService';
+import mailer from './../../../modules/mailerService';
+import { showNotification, hideNotification } from './notificationsActions';
 
 export const send_request = () => {
   return {
@@ -31,14 +31,28 @@ export const get_public_key = (publicKey) => {
   }
 };
 
+export const showSpinner = () => {
+  return dispatch => {
+    dispatch(send_request());
+  }
+};
+
 export const sendMail = (data, composeBoxIndex) => {
   return dispatch => {
-    mailerService.sendEmail(data);
+    mailer.sendEmail(data, (error, result) => {
+      if(error) {
+          dispatch(send_error());
+          return;
+      }
 
-    // Dispatch the success action
-    dispatch(send_success());
-    dispatch(remove_compose_box(composeBoxIndex));
-    browserHistory.push('/');
+      // Dispatch the success action
+      dispatch(send_success());
+      dispatch(remove_compose_box(composeBoxIndex));
+      dispatch(showNotification('sentOk'));
+      setTimeout(() => {
+        dispatch(hideNotification('sentOk'));
+      }, 5000);
+    });
   }
 };
 

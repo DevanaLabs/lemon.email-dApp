@@ -5,7 +5,7 @@ import logo from '../../../../images/logo-white.svg';
 const Header = () => (
     <header>
         <div id="header-wrapper">
-            <a id="header-logo" href="/">
+            <a id="header-logo" href="#">
                 <img src={logo}/>
             </a>
 

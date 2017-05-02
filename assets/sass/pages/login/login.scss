@@ -5,6 +5,30 @@ $login-input-color: #3b4148;
 $login-input-wrapper-color: #363b41;
 $login-text-color: #606468;
 
+.auth-wrapper {
+  h1 {
+    color: white;
+    font-size: 4.2rem;
+    margin: 0 auto;
+    font-weight: 700;
+    width: 550px;
+    line-height: 1.2;
+  }
+
+  .regular-text {
+    margin: 20px auto 0;
+    font-size: 1.8rem;
+    color: white;
+    width: 550px;
+    line-height: 1.7;
+    a {
+      color: #a5d8de;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
 .auth-background {
 
   .form-wrapper {
@@ -15,62 +39,69 @@ $login-text-color: #606468;
 }
 
 .auth-form {
-  max-width: 900px;
+  max-width: 600px;
   //height: 33rem;
-  text-align: center;
-  margin: 50px auto;
-  padding: 50px;
+  margin: 0 auto;
+  padding: 0 10px;
 
   &.unlock {
     height: 22rem;
   }
 
   .auth-title {
-    color: $color-primary;
-    font-size: 4.2rem;
-    margin-bottom: 3rem;
-    font-weight: bold;
-    font-family: $font-default;
+    margin: 0;
   }
 
-  .auth-description {
-    font-size: 2.6rem;
+  .auth-regular {
+    font-size: 1.8rem;
     line-height: 1.23em;
-    color: #666;
+    color: #ffffff;
+    margin-top: 30px;
   }
+
   .auth-warning {
-    color: $status-err;
-    font-size: 1.6rem;
+    color: white;
+    font-size: 1.4rem;
+    line-height: 1.7;
     margin-top: 1rem;
   }
 
+  .auth-email {
+    color: #b6d6d2;
+  }
+
   .auth-input {
-    margin: 3rem auto;
-    font-size: 1.8rem;
+    width: 285px;
+    height: 50px;
+    line-height: 50px;
     box-sizing: border-box;
+    margin: 2.5rem auto 1.5rem;
+    padding: 5px 20px;
+    font-size: 1.8rem;
     vertical-align: top;
-    height: 70px;
-    width: 420px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
-    line-height: 70px;
     font-family: $font-default;
-    color: #666;
-    display: block;
+    display: inline-block;
+    background: transparent;
+    border-radius: 2px;
+    color: white;
 
     &.error {
-      border: 1px solid $status-err;
+      border-color: $status-err;
     }
 
     &:focus {
-      box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.2);
+      border-color: white;
     }
   }
 
   .form-loader {
+    color: white;
     position: relative;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 2rem;
     vertical-align: top;
     display: flex;
     align-items: center;
@@ -83,7 +114,7 @@ $login-text-color: #606468;
       height: 3rem;
       width: 3rem;
       margin-left: 2rem;
-      box-shadow: 0 2px 0 0 #2d2d2d;
+      box-shadow: 0 2px 0 0 white;
       top: 0;
       left: 0;
     }
@@ -100,10 +131,9 @@ $login-text-color: #606468;
   }
 
   .auth-button {
-    @include button(42rem, 7rem, 0, $color-primary, white);
-    display: block;
-    margin: 3rem auto;
-    font-weight: bold;
+    @include button(200px, 50px, 2px, white, #101017);
+    margin: 2.5rem auto 1.5rem 15px;
+    font-size: 1.6rem;
     transition: background .3s;
   }
 
