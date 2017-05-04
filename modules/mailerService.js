@@ -4,7 +4,7 @@ const ipfs = require('./ipfsService'),
   eth = require('./ethereumService'),
   sha3  = require('solidity-sha3');
 
-var backupIpfsNodes = ['https://earth.i.ipfs.io/ipfs/', 'https://ipfs.io/ipfs/', 'https://ipfsdapp.lemon.email/ipfs/'];
+var backupIpfsNodes = ['https://earth.i.ipfs.io/ipfs/', 'https://ipfs.io/ipfs/', 'https://ipfs-dapp.lemon.email/ipfs/'];
 
 var mailerService = {
   sendEmail: function(emailData, callback) {

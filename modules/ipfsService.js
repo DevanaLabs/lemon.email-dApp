@@ -1,7 +1,7 @@
 'use strict';
 
 const concat = require('concat-stream'),
-      decoder = require('text-encoding');
+  decoder = require('text-encoding');
 
 var bootstrapWsAddr = '/dns4/ams-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd';
 var ipfsNode = null;
@@ -13,7 +13,6 @@ var ipfsService = {
         return callback();
       } else {
         ipfsNode.on('start', function() {
-          console.log("Calling ipfs callback");
           callback();
         });
         return;
@@ -57,18 +56,20 @@ var ipfsService = {
   },
   store: function(data, callback) {
     this.safeInit(function() {
-      ipfsNode.files.add(new Buffer(data), function (err, res) {
-        if (err || !res) {
-          return callback('ipfs add error ' + err, null);
-        }
-
-        res.forEach(function (file) {
-          if (file && file.hash) {
-            console.log("Stored email at " + file.hash);
-            return callback(null, file.hash);
+      ipfs.swarm.connect(bootstrapWsAddr, function (error, result) {
+        ipfsNode.files.add(new Buffer(data), function (err, res) {
+          if (err || !res) {
+            return callback('ipfs add error ' + err, null);
           }
-        })
-      })
+
+          res.forEach(function (file) {
+            if (file && file.hash) {
+              console.log("Stored email at " + file.hash);
+              return callback(null, file.hash);
+            }
+          })
+        });
+      });
     });
   },
   fetch: function(hash, callback) {
