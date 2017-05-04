@@ -25,10 +25,10 @@ ipfs add -r publicIpfs
 You should receive the following hash: 
 
 ```
-QmUMQ2Jvdds8673Su5CVXfPPjN6HfW1LPyuyqpBZxmjuN5
+QmfJ856Hu6LCHo64eMrvnKPpqevAkB8aJ83o1cMrtt59KM
 ```
 
-You can then access the app through an IPFS gateway, e.g. https://ipfs.io/ipfs/QmUMQ2Jvdds8673Su5CVXfPPjN6HfW1LPyuyqpBZxmjuN5
+You can then access the app through an IPFS gateway, e.g. https://ipfs.io/ipfs/QmfJ856Hu6LCHo64eMrvnKPpqevAkB8aJ83o1cMrtt59KM
 
 # The changelog
 
